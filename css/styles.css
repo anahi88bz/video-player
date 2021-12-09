@@ -1,0 +1,81 @@
+@import './buttons.css';
+
+body {
+    background-color:#3cc7cf;
+    font-family: sans-serif;
+}
+
+
+
+.wrapper {
+    max-inline-size: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: relative;
+}
+
+.circle {
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    border: solid 35px #26B4BC;
+    overflow:hidden; /* Evitar que el contenido se visualice fuera del borde*/
+  }
+.player {
+    margin-block-start: 100px;
+    /* border: 10px solid red; */
+    position: absolute;
+   
+}
+
+.player video{
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.player-title {
+    color:white;
+    position: absolute;
+    inset-block-start: 0; /*vertical*/
+    inset-inline-start: 30px; /* inline es horizontal*/
+    
+}
+
+.player-actions {
+    position: absolute;
+    inset: 0; /*inset de todos los ejes*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* z-index: 2; */
+
+}
+
+.player-progress {
+  
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    display: flex;
+    padding: 10px;
+}
+
+.player-progress input {
+    flex: 1;
+}
+.player-overlay{ 
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: .3s opacity;
+}
+
+.player:hover .player-overlay{
+    opacity: 1;
+}
